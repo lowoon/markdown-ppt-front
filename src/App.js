@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import './reset.css';
+import { Route } from 'react-router-dom';
+import Home from './page/Home';
+import CallBack from './page/CallBack';
+import Header from './page/Header';
+import SignUp from './page/SignUp';
+import MyPage from './page/MyPage';
+import Editor from './page/Editor';
 
 function App() {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
+  useEffect(() => {
+    const getToken = () => {
+      setToken(localStorage.getItem("token"));
+    }
+    getToken();
+  }, [token]);
+
+  const onClickLogOut = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    setToken(localStorage.getItem("token"));
+  }
+
+  const onClickLogIn = () => {
+    setToken(localStorage.getItem("token"));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header token={token}
+              onClick={onClickLogOut}/>
+      <Route path={"/"} exact component={Home}/>
+      <Route path={"/sign-up"} exact component={SignUp}/>
+      <Route path={"/callback"}
+             render={(props) => <CallBack {...props} onClick={onClickLogIn}/>}/>
+      <Route path={"/my-page"} exact component={MyPage}/>
+      <Route path={"/editor"} exact component={Editor}/>
+    </>
   );
 }
 

@@ -1,38 +1,228 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+}
+
+a:link {
+  color: black;
+  font-style: normal;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 10;
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  z-index: 4;
+  font-size: 15px;
+  border-bottom: 1px solid #ffA500;
+  display: flex;
+  background: #ffffff;
+}
+
+.logo-area {
+  display: flex;
+  flex: 0.7;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo {
+  display: flex;
+  justify-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-name {
+  display: flex;
+  justify-items: center;
+  font-weight: 900;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hr {
+  border: 1px dashed #ffA500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
+  display: flex;
+  flex: 2;
+  width: 100%;
+  justify-content: flex-end;
+  align-content: center;
+  margin-right: 20px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.nav-item > button {
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+.nav-word {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+.sign-up {
+  border-radius: 8px;
+  padding: 10px 2px;
+}
+
+.normal {
+  background: #ffffff;
+}
+
+.special {
+  background: #b3d4fc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.login-btn {
+  height: 100px;
+  width: 100px;
+}
+
+.sign-up-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.explanation {
+  display: flex;
+  flex-direction: column;
+  flex: 0.7;
+  justify-content: flex-end;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #ffA500;
+  font-style: italic;
+  font-size: 40px;
+  padding-bottom: 5%;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+}
+
+.sign-up {
+  margin: 25px 0;
+  background: #d3d3d3;
+  border: none;
+}
+
+.home {
+  position: relative;
+  top: 70px;
+}
+
+.my-page {
+  position: relative;
+  display: flex;
+  top: 70px;
+  width: 100%;
+}
+
+.my-page-nav {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 200px;
+  height: calc(100% - 70px);
+  background: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.my-page-nav-item {
+  margin-top: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.my-page-nav-word {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+.notes-container {
+  position: relative;
+  left: 200px;
+  width: calc(100% - 200px);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note-preview {
+  flex-basis: 33.3%;
+}
+
+.editor {
+  position: relative;
+  top: 70px;
+  width: 100%;
+  height: calc(100% - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview {
+  flex: 2;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #222222;
+  margin: 10px;
+}
+
+.presentation {
+  width: 100%;
+  height: 100%;
+}
+
+.markdown-text-container {
+  flex: 1;
+  width: 50%;
+}
+
+.markdown-text {
+  width: 100%;
+  height: 80%;
 }
